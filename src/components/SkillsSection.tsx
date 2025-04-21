@@ -1,13 +1,14 @@
+
 import { useState } from "react";
 import {
-  React as ReactIcon,
-  Node as NodeIcon,
-  CPlusPlus as CPlusPlusIcon,
-  Java as JavaIcon,
-  Javascript as JavascriptIcon,
-  Html as HtmlIcon,
-  Css as CssIcon,
-  Python as PythonIcon,
+  Code,
+  Server,
+  BookCode,
+  Hammer,
+  FileJson,
+  FileHtml,
+  FileCode,
+  Binary
 } from "lucide-react";
 
 const skills = [
@@ -16,25 +17,25 @@ const skills = [
     items: [
       {
         name: "React",
-        icon: <ReactIcon size={36} className="text-[#61dafb]" />,
+        icon: <Code size={36} className="text-[#61dafb]" />,
         color: "from-[#61dafb]/90 via-[#4890cc]/60 to-[#1a3043]/80",
         description: "Built dynamic UIs, SPAs & hooks.",
       },
       {
         name: "JavaScript",
-        icon: <JavascriptIcon size={36} className="text-yellow-400" />,
+        icon: <FileJson size={36} className="text-yellow-400" />,
         color: "from-yellow-400 via-yellow-300 to-amber-200",
         description: "Modern ES6+, async, DOM, toolchains.",
       },
       {
         name: "HTML5",
-        icon: <HtmlIcon size={36} className="text-orange-500" />,
+        icon: <FileHtml size={36} className="text-orange-500" />,
         color: "from-orange-400 via-orange-700 to-amber-100",
         description: "Semantic, SEO-friendly web layouts.",
       },
       {
         name: "CSS3",
-        icon: <CssIcon size={36} className="text-blue-500" />,
+        icon: <FileCode size={36} className="text-blue-500" />,
         color: "from-blue-400 via-blue-600 to-blue-200",
         description: "Responsive, Flexbox, Grid, Animations.",
       },
@@ -51,7 +52,7 @@ const skills = [
     items: [
       {
         name: "Node.js",
-        icon: <NodeIcon size={36} className="text-green-500" />,
+        icon: <Server size={36} className="text-green-500" />,
         color: "from-green-400 via-green-700 to-lime-200",
         description: "Express, REST APIs, middleware.",
       },
@@ -73,7 +74,7 @@ const skills = [
       },
       {
         name: "Django",
-        icon: <PythonIcon size={36} className="text-green-900" />,
+        icon: <BookCode size={36} className="text-green-900" />,
         color: "from-green-900 via-green-500 to-yellow-100",
         description: "Python backend, auth, admins.",
       },
@@ -90,19 +91,19 @@ const skills = [
     items: [
       {
         name: "C++",
-        icon: <CPlusPlusIcon size={36} className="text-blue-800" />,
+        icon: <BookCode size={36} className="text-blue-800" />,
         color: "from-blue-800 via-indigo-800 to-slate-200",
         description: "OOP, DS/Algo, competitive coding.",
       },
       {
         name: "Java",
-        icon: <JavaIcon size={36} className="text-orange-700" />,
+        icon: <BookCode size={36} className="text-orange-700" />,
         color: "from-orange-700 via-orange-400 to-amber-100",
         description: "OOP, Core, mini projects.",
       },
       {
         name: "Python",
-        icon: <PythonIcon size={36} className="text-yellow-700" />,
+        icon: <Binary size={36} className="text-yellow-700" />,
         color: "from-yellow-700 via-yellow-400 to-amber-100",
         description: "Scripts, ML/AI, backend work.",
       },
