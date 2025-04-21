@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Code as ReactIcon,
@@ -220,17 +219,6 @@ function SkillCard({ skill }: { skill: any }) {
           tabIndex={0}
           aria-label={`${skill.name} skill`}
         >
-          <span
-            className={`absolute top-2 left-2 z-20 px-2 py-0.5 rounded-xl text-xs font-bold shadow bg-white/60 dark:bg-black/60 ring-2 ring-white/80 dark:ring-black/80
-              text-${skill.color?.split("-")[1] || "gray"}-700 opacity-80`}
-            style={{
-              color: "#333",
-              background: "rgba(255,255,255,0.7)",
-              boxShadow: `0 2px 12px 0 ${skill.color?.replace("from-", "")?.split(" ")[0] || "#999"}40`
-            }}
-          >
-            {skill.level}%
-          </span>
           <div className="flex flex-col items-center mt-4 mb-1 transition-all">
             <span
               className="block animate-bounce-light group-hover:scale-110 duration-150"
@@ -267,10 +255,6 @@ function SkillCard({ skill }: { skill: any }) {
         <div className="text-lg font-bold flex items-center gap-1 mb-1">
           {skill.icon}
           {skill.name}
-        </div>
-        <div className="flex items-center gap-2 mb-1">
-          <span className="font-semibold">{skill.level}%</span>
-          <span className="text-muted-foreground">proficiency</span>
         </div>
         <div className="mt-2 text-xs text-muted-foreground">
           {skill.description}

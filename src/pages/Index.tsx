@@ -12,9 +12,9 @@ import LoadingAnimation from "@/components/LoadingAnimation";
 import BackToTop from "@/components/BackToTop";
 import FloatingEmojis from "@/components/FloatingEmojis";
 import ScrollProgress from "@/components/ScrollProgress";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
-  // Add intersection observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,6 +46,7 @@ const Index = () => {
       <FloatingEmojis />
       <main>
         <HeroSection />
+        <AboutSection />
         <ProjectsSection />
         <SkillsSection />
         <CertificatesSection />
