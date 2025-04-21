@@ -3,10 +3,7 @@ import { useState } from "react";
 import {
   Code,
   Server,
-  BookCode,
-  Hammer,
   FileJson,
-  FileHtml,
   FileCode,
   Binary
 } from "lucide-react";
@@ -29,7 +26,7 @@ const skills = [
       },
       {
         name: "HTML5",
-        icon: <FileHtml size={36} className="text-orange-500" />,
+        icon: <FileCode size={36} className="text-orange-500" />,
         color: "from-orange-400 via-orange-700 to-amber-100",
         description: "Semantic, SEO-friendly web layouts.",
       },
@@ -74,7 +71,7 @@ const skills = [
       },
       {
         name: "Django",
-        icon: <BookCode size={36} className="text-green-900" />,
+        icon: <Code size={36} className="text-green-900" />,
         color: "from-green-900 via-green-500 to-yellow-100",
         description: "Python backend, auth, admins.",
       },
@@ -91,13 +88,13 @@ const skills = [
     items: [
       {
         name: "C++",
-        icon: <BookCode size={36} className="text-blue-800" />,
+        icon: <Code size={36} className="text-blue-800" />,
         color: "from-blue-800 via-indigo-800 to-slate-200",
         description: "OOP, DS/Algo, competitive coding.",
       },
       {
         name: "Java",
-        icon: <BookCode size={36} className="text-orange-700" />,
+        icon: <Code size={36} className="text-orange-700" />,
         color: "from-orange-700 via-orange-400 to-amber-100",
         description: "OOP, Core, mini projects.",
       },
@@ -239,3 +236,4 @@ export default function SkillsSection() {
     </section>
   );
 }
+
