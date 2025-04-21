@@ -1,14 +1,14 @@
 
 import { useState } from "react";
 import {
-  React as ReactIcon,
-  Node as NodeIcon,
-  CPlusPlus as CPlusPlusIcon,
-  Java as JavaIcon,
-  Javascript as JavascriptIcon,
-  Html as HtmlIcon,
-  Css as CssIcon,
-  Python as PythonIcon,
+  Code as ReactIcon,
+  Server as NodeIcon,
+  File as CPlusPlusIcon,
+  Coffee as JavaIcon,
+  Code as JavascriptIcon,
+  FileCode as HtmlIcon,
+  FileCode2 as CssIcon,
+  Terminal as PythonIcon,
 } from "lucide-react";
 import {
   HoverCard,
