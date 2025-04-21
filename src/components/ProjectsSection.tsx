@@ -1,6 +1,7 @@
 
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
@@ -77,43 +78,43 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-16 bg-muted/30"> {/* reduced padding */}
+    <section id="projects" className="py-12 bg-muted/30">
       <div className="section-container animate-on-scroll opacity-0">
-        <h2 className="section-title text-3xl md:text-4xl"> {/* slightly smaller title */}
+        <h2 className="section-title text-2xl md:text-3xl">
           My <span className="gradient-text">Projects</span>
         </h2>
-        <p className="section-subtitle text-lg md:text-xl mb-6"> {/* slightly smaller subtitle and margin */}
+        <p className="section-subtitle text-base md:text-lg mb-4">
           Here are some of my recent projects that showcase my skills and experience
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"> {/* reduced grid gap and margin */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           {projects.map((project) => (
-            <div 
+            <Card 
               key={project.id} 
-              className={`project-card group ${
+              className={`overflow-hidden border-border/50 ${
                 expandedId === project.id ? 'md:col-span-2' : ''
               }`}
             >
               <div className={`grid ${
                 expandedId === project.id 
-                  ? 'grid-cols-1 md:grid-cols-2 gap-4'  /* smaller gap when expanded */
+                  ? 'grid-cols-1 md:grid-cols-2 gap-3' 
                   : 'grid-cols-1'
               }`}>
-                <div className="relative overflow-hidden aspect-video rounded-lg">
+                <div className="relative overflow-hidden aspect-video">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-lg"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end rounded-lg">
-                    <div className="p-3 w-full flex justify-between items-center text-sm"> {/* smaller padding and font */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                    <div className="p-2 w-full flex justify-between items-center text-xs">
                       <p className="text-white font-medium">{project.tech.join(" • ")}</p>
                       <button 
                         onClick={() => toggleExpand(project.id)}
                         className="p-1 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
                         aria-label={expandedId === project.id ? "Show less" : "Show more"}
                       >
-                        <ArrowUpRight size={16} className={`transition-transform ${
+                        <ArrowUpRight size={14} className={`transition-transform ${
                           expandedId === project.id ? 'rotate-180' : ''
                         }`} />
                       </button>
@@ -121,14 +122,14 @@ export default function ProjectsSection() {
                   </div>
                 </div>
                 
-                <div className="p-4"> {/* reduced padding */}
-                  <h3 className="text-lg font-semibold mb-1">{project.title}</h3> {/* smaller heading */}
-                  <p className="text-muted-foreground mb-3 text-sm">{project.description}</p> {/* smaller text and margin */}
+                <CardContent className="p-3">
+                  <h3 className="text-base font-semibold mb-1">{project.title}</h3>
+                  <p className="text-muted-foreground mb-2 text-xs">{project.description}</p>
                   
                   {expandedId === project.id && (
-                    <div className="mt-3 animate-fade-in text-sm">
+                    <div className="mt-2 animate-fade-in text-xs">
                       <h4 className="font-medium mb-1">Key Features:</h4>
-                      <ul className="list-disc list-inside space-y-1 mb-3 text-muted-foreground">
+                      <ul className="list-disc list-inside space-y-0.5 mb-2 text-muted-foreground">
                         {project.features.map((feature, index) => (
                           <li key={index}>{feature}</li>
                         ))}
@@ -136,14 +137,14 @@ export default function ProjectsSection() {
                     </div>
                   )}
                   
-                  <div className="flex gap-3 mt-3 text-sm"> {/* smaller gap and font */}
+                  <div className="flex gap-2 mt-2 text-xs">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-foreground hover:text-blue-light transition-colors"
                     >
-                      <Github size={16} />
+                      <Github size={14} />
                       <span>GitHub</span>
                     </a>
                     <a
@@ -152,17 +153,16 @@ export default function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-foreground hover:text-blue-light transition-colors"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={14} />
                       <span>Live Demo</span>
                     </a>
                   </div>
-                </div>
+                </CardContent>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
     </section>
   );
 }
-
